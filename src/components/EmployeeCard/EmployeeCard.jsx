@@ -1,9 +1,13 @@
 import React from "react";
 import "./employeecard.css";
-export default function EmployeeCard({result}) {
+import profileIcon from './../../employee.svg'
+export default function EmployeeCard({employee}) {
     return (
-        <div id="result-div" className="result-div" >
-            {result.map(employee=>(<div>{employee.employee_name}</div>))}
-         </div>
+        <div className="employee-card" >
+            <img src={ employee && employee.profile_image ? employee.profile_image : profileIcon}/>
+            <p>ID : {employee.employee_name}</p>
+            <p>Age: {employee.employee_age}</p>
+            <p>Salary : {employee.employee_salary}</p>
+        </div>
     );
 }
