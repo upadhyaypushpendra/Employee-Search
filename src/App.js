@@ -14,10 +14,10 @@ class App extends React.Component{
     resultDivDisplay = false;
     inputTimeoutId=0;
     componentDidMount() {
-            fetch('http://dummy.restapiexample.com/api/v1/employees')
+            fetch('https://dummy.restapiexample.com/api/v1/employees')
                 .then((response) => response.json())
                 .then(result => {
-                    this.setState({employee:result.data});
+                    this.setState({employees:result.data});
                 });
     }
     handleFocusIn (){
